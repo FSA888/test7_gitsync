@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>от</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СчетСписанияДС" id="7">
+			<DataPath>Объект.Счет</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет списания ДС</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СчетСписанияДСКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СчетСписанияДСРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="СтатьяДвижений" id="10">
+			<DataPath>Объект.СтатьяДвижений</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СтатьяДвиженийКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="СтатьяДвиженийРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<CheckBoxField name="РазделитьПоТоварам" id="49">
+			<DataPath>Объект.РазделитьПоТоварам</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="РазделитьПоТоварамКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="РазделитьПоТоварамРасширеннаяПодсказка" id="51"/>
+			<Events>
+				<Event name="OnChange">РазделитьПоТоварамПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<InputField name="Сумма" id="13">
+			<DataPath>Объект.Сумма</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<Table name="РасшифровкаПокупки" id="19">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.РасшифровкаПокупки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="РасшифровкаПокупкиКонтекстноеМеню" id="20"/>
+			<AutoCommandBar name="РасшифровкаПокупкиКоманднаяПанель" id="21"/>
+			<ExtendedTooltip name="РасшифровкаПокупкиРасширеннаяПодсказка" id="22"/>
+			<SearchStringAddition name="РасшифровкаПокупкиСтрокаПоиска" id="23">
+				<AdditionSource>
+					<Item>РасшифровкаПокупки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РасшифровкаПокупкиСтрокаПоискаКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="РасшифровкаПокупкиСтрокаПоискаРасширеннаяПодсказка" id="25"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="РасшифровкаПокупкиСостояниеПросмотра" id="26">
+				<AdditionSource>
+					<Item>РасшифровкаПокупки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РасшифровкаПокупкиСостояниеПросмотраКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="РасшифровкаПокупкиСостояниеПросмотраРасширеннаяПодсказка" id="28"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="РасшифровкаПокупкиУправлениеПоиском" id="29">
+				<AdditionSource>
+					<Item>РасшифровкаПокупки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="РасшифровкаПокупкиУправлениеПоискомКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="РасшифровкаПокупкиУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="РасшифровкаПокупкиНомерСтроки" id="32">
+					<DataPath>Объект.РасшифровкаПокупки.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РасшифровкаПокупкиНомерСтрокиКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="РасшифровкаПокупкиНомерСтрокиРасширеннаяПодсказка" id="34"/>
+				</LabelField>
+				<InputField name="РасшифровкаПокупкиНоменклатура" id="35">
+					<DataPath>Объект.РасшифровкаПокупки.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="РасшифровкаПокупкиНоменклатураКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="РасшифровкаПокупкиНоменклатураРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="РасшифровкаПокупкиЦена" id="38">
+					<DataPath>Объект.РасшифровкаПокупки.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="РасшифровкаПокупкиЦенаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="РасшифровкаПокупкиЦенаРасширеннаяПодсказка" id="40"/>
+					<Events>
+						<Event name="OnChange">РасшифровкаПокупкиЦенаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="РасшифровкаПокупкиКоличество" id="41">
+					<DataPath>Объект.РасшифровкаПокупки.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="РасшифровкаПокупкиКоличествоКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="РасшифровкаПокупкиКоличествоРасширеннаяПодсказка" id="43"/>
+					<Events>
+						<Event name="OnChange">РасшифровкаПокупкиКоличествоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="РасшифровкаПокупкиСумма" id="44">
+					<DataPath>Объект.РасшифровкаПокупки.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.РасшифровкаПокупки.TotalСумма</FooterDataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="РасшифровкаПокупкиСуммаКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="РасшифровкаПокупкиСуммаРасширеннаяПодсказка" id="46"/>
+					<Events>
+						<Event name="OnChange">РасшифровкаПокупкиСуммаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Комментарий" id="16">
+			<DataPath>Объект.Комментарий</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="18"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.Покупка</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>AccumulationRegister.ЛичныеСчета.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>AccumulationRegister.Расходы.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>
